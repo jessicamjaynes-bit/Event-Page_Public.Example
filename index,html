@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Spring Festival 2026 - Public Event</title>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; color: #1e293b; background-color: #ffffff; line-height: 1.6; }
+        
+        /* Navigation Bar */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: #ffffff; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 18px; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; }
+        .nav-links { display: flex; gap: 20px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #64748b; font-size: 14px; font-weight: 600; transition: color 0.2s; }
+        .nav-links a:hover { color: #2563eb; }
+        .btn-nav { background: #2563eb; color: white !important; padding: 8px 16px; border-radius: 6px; }
+
+        /* General Section Layout */
+        section { padding: 70px 20px; border-bottom: 1px dashed #e2e8f0; position: relative; }
+        .section-tag { position: absolute; top: 15px; left: 20px; background: #2563eb; color: white; padding: 4px 10px; font-size: 11px; font-weight: bold; border-radius: 4px; text-transform: uppercase; }
+        .container { max-width: 950px; margin: 0 auto; }
+        .section-title { font-size: 28px; color: #0f172a; margin-top: 0; margin-bottom: 8px; font-weight: 800; text-align: center; }
+        .section-subtitle { color: #64748b; text-align: center; margin-bottom: 35px; font-size: 15px; }
+
+        /* Hero Banner */
+        .hero { background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%); padding: 90px 20px 70px; text-align: center; }
+        .badge { display: inline-block; background: #dbeafe; color: #1e40af; padding: 6px 14px; font-size: 13px; font-weight: 700; border-radius: 20px; margin-bottom: 15px; }
+        .hero h1 { font-size: 42px; color: #0f172a; margin-bottom: 15px; font-weight: 800; line-height: 1.2; }
+        .hero p { font-size: 18px; color: #475569; max-width: 650px; margin: 0 auto 30px auto; }
+        .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: #2563eb; color: white; text-decoration: none; padding: 12px 26px; font-size: 15px; font-weight: bold; border-radius: 6px; border: none; cursor: pointer; transition: background 0.2s; display: inline-block; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary { background: #ffffff; color: #0f172a; border: 1px solid #cbd5e1; text-decoration: none; padding: 12px 26px; font-size: 15px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: all 0.2s; display: inline-block; }
+
+        /* Event Quick Info Grid */
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 30px; }
+        .info-card { background: #ffffff; padding: 25px; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center; }
+        .info-card h3 { margin-top: 0; font-size: 14px; color: #64748b; text-transform: uppercase; }
+        .info-card p { margin: 0; font-size: 18px; font-weight: bold; color: #0f172a; }
+
+        /* Schedule Timeline Cards */
+        .timeline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .schedule-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; }
+        .schedule-time { color: #2563eb; font-weight: bold; font-size: 13px; text-transform: uppercase; }
+        .schedule-card h3 { margin: 5px 0 8px 0; font-size: 18px; color: #0f172a; }
+        .schedule-card p { margin: 0; color: #64748b; font-size: 13px; }
+
+        /* Modal Popup Styles */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.75); z-index: 1000; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; backdrop-filter: blur(4px); }
+        .modal-overlay.active { display: flex; }
+        .modal-content { background: #ffffff; width: 100%; max-width: 600px; border-radius: 12px; padding: 30px; position: relative; text-align: left; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
+        .modal-close { position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: #64748b; }
+
+        /* Footer */
+        footer { background: #f8fafc; padding: 30px 20px; text-align: center; color: #64748b; font-size: 13px; border-top: 1px solid #e2e8f0; }
+
+        @media (max-width: 600px) {
+            nav { padding: 15px 20px; }
+            .hero h1 { font-size: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <div class="logo">🎡 City Festival 2026</div>
+        <div class="nav-links">
+            <a href="index.html">Overview</a>
+            <a href="#schedule">Schedule</a>
+            <a href="connect.html" class="btn-nav">Connect & Inquiries</a>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO BANNER -->
+    <section class="hero">
+        <span class="section-tag">Public Event Notice</span>
+        <div class="container">
+            <div class="badge">📍 Downtown Community Plaza • Free Admission</div>
+            <h1>Annual Community Spring Festival</h1>
+            <p>Join us for live music, local food trucks, artisan craft vendors, and family activities in the heart of downtown.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="openModal()">Learn More Details ↓</button>
+                <a href="connect.html" class="btn-secondary">Connect & Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENT AT A GLANCE METRICS -->
+    <section style="background: #ffffff;">
+        <span class="section-tag">Key Information</span>
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>📅 Date</h3>
+                    <p>Saturday, May 16, 2026</p>
+                </div>
+                <div class="info-card">
+                    <h3>⏰ Event Hours</h3>
+                    <p>10:00 AM – 8:00 PM</p>
+                </div>
+                <div class="info-card">
+                    <h3>🎟️ Entry Fee</h3>
+                    <p>Free & Open to Public</p>
+                </div>
+                <div class="info-card">
+                    <h3>🚗 Parking</h3>
+                    <p>Free Main St Garage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: SCHEDULE HIGHLIGHTS -->
+    <section id="schedule" style="background: #f8fafc;">
+        <span class="section-tag">Event Agenda</span>
+        <div class="container">
+            <h2 class="section-title">Festival Highlights & Schedule</h2>
+            <p class="section-subtitle">Plan your visit around key performances and community activities.</p>
+
+            <div class="timeline-grid">
+                <div class="schedule-card">
+                    <span class="schedule-time">10:00 AM - Opening Ceremony</span>
+                    <h3>Opening Parade & Welcome</h3>
+                    <p>Welcome address by local community leaders followed by high school marching band performance.</p>
+                </div>
+                <div class="schedule-card">
+                    <span class="schedule-time">12:00 PM - Main Stage</span>
+                    <h3>Live Acoustic Music & Food Court</h3>
+                    <p>Enjoy local musicians while sampling dishes from over 20 regional food truck vendors.</p>
+                </div>
+                <div class="schedule-card">
+                    <span class="schedule-time">3:00 PM - Family Zone</span>
+                    <h3>Youth Crafts & Games</h3>
+                    <p>Interactive art stations, face painting, and obstacle courses for children of all ages.</p>
+                </div>
+                <div class="schedule-card">
+                    <span class="schedule-time">6:00 PM - Evening Finale</span>
+                    <h3>Headline Band Performance</h3>
+                    <p>Live evening concert featuring regional headliner ensemble at the plaza main stage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEARN MORE MODAL -->
+    <div class="modal-overlay" id="learnMoreModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <span style="background: #2563eb; color: white; padding: 4px 8px; font-size: 11px; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Public Information</span>
+            <h2 style="margin-top: 10px; color: #0f172a;">Festival Guidelines & Accessibility</h2>
+            <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 15px 0;">
+            <p><strong>Accessibility:</strong> Wheelchair accessible pathways, dedicated parking, and sensory-friendly rest areas provided.</p>
+            <p><strong>Pets:</strong> Leashed pets are welcome in open lawn spaces.</p>
+            <p><strong>Weather Policy:</strong> Rain or shine event. In severe weather updates will be posted online.</p>
+            <button class="btn-primary" style="width: 100%; margin-top: 15px;" onclick="closeModal()">Got It</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>City Spring Festival Committee</strong> • Public Community Event</p>
+        <p>© 2026 All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function openModal() { document.getElementById('learnMoreModal').classList.add('active'); }
+        function closeModal() { document.getElementById('learnMoreModal').classList.remove('active'); }
+        window.onclick = function(e) { if (e.target === document.getElementById('learnMoreModal')) closeModal(); }
+    </script>
+
+</body>
+</html>
